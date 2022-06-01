@@ -6,6 +6,5 @@ import javax.servlet.http.HttpServletResponse;
 
 public interface Calculator {
 	public String calculate(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException;
-
 }
 
