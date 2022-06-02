@@ -15,7 +15,7 @@ public class AddCalculator implements Calculator {
 		return "result";
 	}
 }
-////get이 기본으로 작동하니 경로설정 잘 확인.
+//// get이 기본으로 작동하니 경로설정 잘 확인.
 //	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 //		req.getRequestDispatcher("/addform.jsp").forward(req, resp);
 //	}
