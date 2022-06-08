@@ -25,7 +25,7 @@ public class ViewController extends HttpServlet {
 		 dto.setContent(dto.getContent().replaceAll("\r\n", "<br/>"));
 
 		
-		//게시물(dto)저장 후 뷰로 포워드
+		// 게시물(dto)저장 후 뷰로 포워드
 		 req.setAttribute("dto", dto);
 	        req.getRequestDispatcher("../14MVCBoard/View.jsp").forward(req, resp);
 	

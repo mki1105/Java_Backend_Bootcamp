@@ -8,7 +8,7 @@
 <title>파일 첨부형 게시판</title>
 </head>
 <body>
-<h2>파일 첨부형 게시판 - 상세보기</h2>
+<h2>파일 첨부형 게시판 - 상세보기(View)</h2>
 <table border="1" width="90%">
 	<colgroup>
 		<col width ="15%" /> <col width ="35%"/>

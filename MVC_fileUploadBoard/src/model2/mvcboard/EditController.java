@@ -104,6 +104,7 @@ public class EditController extends HttpServlet {
 
 		// 성공 or 실패? 수정이 정상적으로 처리가 된다면 session 영역에 저장된 비밀번호는 삭제하고
 		//상세보기 뷰로 이동해 수정된 내용을 확인시켜줌
+		//오류남 ㅜㅜ! 다시 확인하기
 		   if (result == 1) {  // 수정 성공
 	            session.removeAttribute("pass");
 	            resp.sendRedirect("../mvcboard/view.do?idx=" + idx);
