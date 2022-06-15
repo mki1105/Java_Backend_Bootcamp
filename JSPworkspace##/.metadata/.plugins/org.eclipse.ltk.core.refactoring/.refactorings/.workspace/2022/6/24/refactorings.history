@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;model2&apos; to &apos;mk_FileUploadBoard&apos;" description="Rename resource &apos;model2&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/model2" name="mk_FileUploadBoard" stamp="1654492125349" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;mk_FileUploadBoard&apos; to &apos;mk_MVCFileUploadBoard&apos;" description="Rename resource &apos;mk_FileUploadBoard&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/mk_FileUploadBoard" name="mk_MVCFileUploadBoard" stamp="1654492260955" updateReferences="true"/>
+</session>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
+  <display-name>Exam_Servlet_0601</display-name>
+  <!-- 톰캣한테 서블릿 등록  -->
+  <servlet>
+  	<servlet-name>nowServlet</servlet-name>
+  	<servlet-class>examservlet.NowServlet</servlet-class>
+  </servlet>
+  <!-- 언제 사용할건지 톰캣한테 알려줘야 함. 서블릿 매핑 중요! -->
+  <!-- url 요청이 들어오면 그걸로 처리해라 -->
+  <!-- 정의해놓은 서블릿으로 연결이 될 것임. -->
+  <servlet-mapping>
+  	<servlet-name>nowServlet</servlet-name>
+  	<url-pattern>/now</url-pattern> 
+  </servlet-mapping>
+  
+   <servlet>
+  	<servlet-name>nowServlet2</servlet-name>
+  	<servlet-class>examservlet.NowServlet2</servlet-class>
+  </servlet>
+   <servlet-mapping>
+  	<servlet-name>nowServlet2</servlet-name>
+  	<url-pattern>/now2</url-pattern> 
+  </servlet-mapping>
+  <!--  이름을 가진 서블릿네임으로 가서 동작을 한다. 그럼 톰캣이 알아서 호출 요청정보는 리퀘스트에 담겨있고, 응답정보도 준비가된것도 준비,
+  처리할게 있으면 처리하고, 나중에 포워딩된 jsp파일에서 사용할 수 있게 준비. 그리고 form을 
+  더하기를 누르면 서버로 요청, jsp 파일을 요청하는게 아니라 url을 요청하는 것.
+  톰캣은 dopost한테 전달하괴, 파라미터로 n1을 들어오는걸 꺼내고, 정수로 바꿔주고, 덧셈한 결과를 request 에 담아두고, 결과값준비,
+  작업한 내용을 오퍼레이션으로 담고 -->
+     <servlet>
+  	<servlet-name>addCalc</servlet-name>
+  	<servlet-class>examservlet.AddCalculator</servlet-class>
+  </servlet>
+   <servlet-mapping>
+  	<servlet-name>addCalc</servlet-name>
+  	<url-pattern>/add</url-pattern> 
+  </servlet-mapping>
+  
+       <servlet>
+  	<servlet-name>minCalc</servlet-name>
+  	<servlet-class>examservlet.MinCalculator</servlet-class>
+  </servlet>
+  
+   <servlet-mapping>
+  	<servlet-name>minCalc</servlet-name>
+  	<url-pattern>/min</url-pattern> 
+  </servlet-mapping>
+  
+       <servlet>
+  	<servlet-name>mulCalc</servlet-name>
+  	<servlet-class>examservlet.MulCalculator</servlet-class>
+  </servlet>
+   <servlet-mapping>
+  	<servlet-name>mulCalc</servlet-name>
+  	<url-pattern>/mul</url-pattern> 
+  </servlet-mapping>
+  
+       <servlet>
+  	<servlet-name>divCalc</servlet-name>
+  	<servlet-class>examservlet.DivCalculator</servlet-class>
+  </servlet>
+   <servlet-mapping>
+  	<servlet-name>divCalc</servlet-name>
+  	<url-pattern>/div</url-pattern> 
+  </servlet-mapping>
+  
+</web-app>

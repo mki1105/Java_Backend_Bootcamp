@@ -1,0 +1,9 @@
+package model2.mvcboard;
+
+public class Passcontroller {
+
+	public Passcontroller() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

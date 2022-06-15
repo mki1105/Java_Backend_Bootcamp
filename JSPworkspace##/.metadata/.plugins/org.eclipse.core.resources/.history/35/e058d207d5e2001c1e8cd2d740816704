@@ -1,0 +1,9 @@
+package model2.mvcboard;
+
+public class BoardPage {
+
+	public BoardPage() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

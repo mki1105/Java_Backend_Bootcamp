@@ -1,0 +1,15 @@
+package utils;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class JSFunction {
+
+	public static void alertLocation(HttpServletRequest req, String msg,
+			String url) {
+		try {
+			resp.set
+		}
+	}
+
+}

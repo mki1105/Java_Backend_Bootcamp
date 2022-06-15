@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move &apos;sessionLoginForm.jsp&apos; to &apos;Webapp&apos;" description="Move &apos;sessionLoginForm.jsp&apos; to &apos;Webapp&apos;" destination="Webapp" element1="Webapp/WEB-INF/sessionLoginForm.jsp" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="1" stamp="1653617498140" updateReferences="true"/>
+</session>

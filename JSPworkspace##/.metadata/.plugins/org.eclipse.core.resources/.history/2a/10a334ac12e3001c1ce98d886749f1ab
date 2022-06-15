@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
+  <display-name>model2</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+
+</resource-ref>
+  
+  
+  <!-- 목록보기 -->
+  <servlet>
+  	<servlet-name>MVCBoardList</servlet-name> <!-- 서블릿 이름 -->
+  	<servlet-class>model2.mvcboard.ListController</servlet-class> <!-- 서블릿클래스 -->
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>MVCBoardList</servlet-name> <!-- 서블릿 이름 -->
+  	<url-pattern>/mvcboard/list.do</url-pattern> <!-- 요청명 -->
+  </servlet-mapping>
+   <!-- 글쓰기 -->
+   <servlet>
+  	<servlet-name>MVCBoardWrite</servlet-name> <!-- 서블릿 이름 -->
+  	<servlet-class>model2.mvcboard.WriteController</servlet-class> <!-- 서블릿클래스 -->
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>MVCBoardWrite</servlet-name> <!-- 서블릿 이름 -->
+  	<url-pattern>/mvcboard/Write.do</url-pattern> <!-- 요청명 -->
+  </servlet-mapping>
+  <!-- 업로드할 파일의 제한 용량을 컨텍스트 초기화 매개변수로 추가 1024 바이트 * 1000 즉, 1MB -->
+  <context-param>
+  	<param-name>maxPostSize</param-name>
+  	<param-value>1024000</param-value>
+  </context-param>
+  
+  
+</web-app>

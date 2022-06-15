@@ -1,0 +1,25 @@
+package fileupload;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.oreilly.servlet.MultipartRequest;
+
+public class FileUtil {
+	// 파일 업로드(multipart/form-data 요청) 처리
+	// request객체, 디렉터리의 물리적 경로, 업로드 제한 용량을 매개변수로 객체 생성해 반환
+	public static MultipartRequest uploadFile(HttpServletRequest req,
+			String saveDirectory, int maxPostSize) {
+		try {
+			// 파일 업로드 -
+			return new MultipartRequest(req, saveDirectory, maxPostSize, "UTF-8");
+		} catch (Exception e) {
+			// 업로드 실패
+			e.printStackTrace();
+			return null;
+		}
+	
+	
+	// 명시한 파일을 찾아 다운로드
+	public static void download(HttpServletRequest req, HttpServletResponse resp, String directory, String sfile, )
+}
