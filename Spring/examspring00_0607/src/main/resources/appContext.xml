@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- spring에게 말해줄 것들을 작성해라  -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+  http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--  <bean id="hello" class = "exam01.Hello">
+<property name="name" value ="홍길동"/>
+</bean>-->
+
+<bean id="Calculator" class = "exam01.Calculator">
+</bean>
+
+<bean id="CountCalculator" class = "exam02.CountCalculator">
+
+</bean>
+</beans>
