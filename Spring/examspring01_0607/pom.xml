@@ -1,14 +1,10 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>test</groupId>
-	<artifactId>examspring00</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-
-	<!-- Maven 설정 파일 -->
-
-	<!-- 의존 라이브러리 -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>mki01</groupId>
+  <artifactId>examspring01</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  <!-- 의존 라이브러리 -->
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
 		<dependency>

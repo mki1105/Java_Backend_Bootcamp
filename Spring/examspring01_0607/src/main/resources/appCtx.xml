@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- spring에게 말해줄 것들을 작성해라 -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+  http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="memberDao" class="examspring01.MemberDao">
+	</bean>
+
+	<!-- 생성자의 인자로 객체를 전달하는 xml태그 new MemberRegisterService(memberDao) 와 같은 java 
+		코드로 동작 -->
+<!-- 생성자에 memberDao에 넣어주기 -->
+	<bean id="memberRegSvc" class="examspring01.MemberRegisterService">
+		<constructor-arg ref="memberDao" />
+	</bean>
+
+	<bean id="changePwdSvc" class="examspring01.ChangePasswordService">
+		<constructor-arg ref="memberDao" />
+	</bean>
+
+	<!-- memberprinter 클래스에 대한 스프링 설정 추가 -->
+	<bean id="memberPrinter" class="examspring01.MemberPrinter"></bean>
+	
+	<!-- 두개의 의존 객체를 전달 받는데 스프링 설정 파일에 작성하려면
+	<constructor-arg> 태그를 순서대로 작성하면 됨. 생성자의 인자가 2개 -->
+	<bean id="listPrinter" class="examspring01.MemberListPrinter">
+		<constructor-arg ref="memberDao" />
+		<constructor-arg ref="memberPrinter"/>
+	</bean>
+	
+		<!-- set 메서드가 의존 객체를 전달받는데 이것을 스프링 설정파일에 작성하기
+		property이름과 ref이름은 같아야 함. 프로퍼티는 setter -->
+	<bean id="infoPrinter" class="examspring01.MemberInfoPrinter">
+		<property name ="memberDao" ref="memberDao" />
+		<property name ="memberPrinter" ref="memberPrinter"/>
+	</bean>
+	
+	<!-- versionPrinter 대한 스프링 bean 설정 -->
+	<bean id= "versionPrinter" class="examspring01.VersionPrinter">
+		<property name ="majorVersion" value = "4" />
+		<property name ="minorVersion" value = "1"/>
+	</bean>
+
+</beans>
