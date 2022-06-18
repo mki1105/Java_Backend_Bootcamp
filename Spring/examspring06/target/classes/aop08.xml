@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+  http://www.springframework.org/schema/beans/spring-beans.xsd
+  http://www.springframework.org/schema/context
+  http://www.springframework.org/schema/context/spring-context.xsd
+  http://www.springframework.org/schema/aop
+  http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+	<!-- aop 관련 태그 프록시 때문에 어노테이션을 파악하고 프록시 자동 생성, 생성된 프록시는 포인트 컷 지점이 되면 동작이 
+		되어야 하는 상황이 왔을 때 메서드 사용 -->
+
+	<aop:aspectj-autoproxy />
+	<bean id="myAspect" class="aop08.MyAspect" />
+	<bean id="finishAspect" class="aop08.FinishAspect" />
+	
+	<!--AfterReturningAspect 추가 -->
+	<bean id="afterReturningAspect" class="aop08.AfterReturningAspect"/>
+	<bean id="programmer" class="aop08.Programmer" />
+	<bean id="progamer" class="aop08.Progamer" />
+
+	<!-- 포인트 컷 2번 작성한 것을 바꿔주기 -->
+	<aop:config>
+		<aop:pointcut expression="execution(* usingComputer(..))"
+			id="myPointcut" />
+		<aop:aspect ref="myAspect">
+			<aop:before method="bootingAndLogin"
+				pointcut-ref="myPointcut" />
+		</aop:aspect>
+
+		<aop:aspect ref="finishAspect">
+			<aop:after method="shutdown" pointcut-ref="myPointcut" />
+		</aop:aspect>
+<!-- runtime을 기본으로 실행 중에 만들어지고 함. 인터페이스를 기반으로 함.
+조인포인트 메서드를 호출하는 시점을 조인포인트 어드바이스가 끼워 넣을 수 있는 곳
+포인트컷에 매칭이 되는 호출되는 시점을 찾아서 해당 조인포인트를 컷하라는 뜻.
+지정된 어드바이스 (애프터, 비포 등)를 사이에 끼워 넣는 것임.-->
+		<aop:aspect ref="afterReturningAspect">
+			<aop:after-returning method="afterReturning" pointcut-ref="myPointcut"/>
+		</aop:aspect>
+	</aop:config>
+</beans>

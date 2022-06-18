@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+  http://www.springframework.org/schema/beans/spring-beans.xsd
+  http://www.springframework.org/schema/context
+  http://www.springframework.org/schema/context/spring-context.xsd
+  http://www.springframework.org/schema/aop
+  http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+	<!-- aop 관련 태그 프록시 때문에 어노테이션을 파악하고 프록시 자동 생성, 생성된 프록시는 포인트 컷 지점이 되면 동작이 
+		되어야 하는 상황이 왔을 때 메서드 사용 -->
+
+	<aop:aspectj-autoproxy />
+
+	<bean id="myAspect" class="aop04.MyAspect" />
+	<bean id="finishAspect" class="aop04.FinishAspect" />
+	<bean id="programmer" class="aop04.Programmer" />
+	<bean id="progamer" class="aop04.Progamer" />
+	<!-- 정상적으로 종료 되었을 때, 동작하던 중에 예외로 정상적으로 종료되지 않았을 때 pointcut는 시점을 표시해주는 것. 
+		메서드를 호출하는 지점을 포인트 컷 메서드를 호출하는 시점들은 joinpoint, 어떤 시점에 들어가라고 하는 것이 포인트 컷 -->
+		
+	<aop:config>
+		<aop:aspect ref="myAspect">
+			<aop:before method="bootingAndLogin"
+				pointcut="execution(* usingComputer(..))" />
+		</aop:aspect>
+
+		<aop:aspect ref="finishAspect">
+			<aop:after method="shutdown"
+				pointcut="execution(* usingComputer(..))" />
+		</aop:aspect>
+	</aop:config>
+
+</beans>
