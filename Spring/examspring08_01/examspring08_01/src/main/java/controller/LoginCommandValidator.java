@@ -1,0 +1,24 @@
+package controller;
+// 전달받은 값을 검증하는 클래스
+import org.springframework.validation.Errors;
+import org.springframework.validation.ValidationUtils;
+import org.springframework.validation.Validator;
+
+public class LoginCommandValidator implements Validator{
+
+	@Override
+	public boolean supports(Class<?> arg0) {
+		return LoginCommand.class.isAssignableFrom(arg0);
+	}
+
+	@Override
+	public void validate(Object target, Errors errors) {
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "email", "required");
+		ValidationUtils.rejectIfEmpty(errors, "password", "required");
+		
+		
+	}
+	
+
+
+}
